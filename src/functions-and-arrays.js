@@ -125,21 +125,31 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray(wordsUnique) {
+function uniquifyArray(arrayU) {
 
-  if (wordsUnique.length === 0) {
-    return null
+  let arrLength = arrayU.length;
 
+    if (arrLength === 0) {
+      return null;
+    }
 
-  } else if  (wordsUnique[i] === wordsUnique[i + 1]) {
-      
-    wordsUnique.pop(wordsUnique[i]) 
+    for (let i = 0; i < arrLength; i++) {
 
-    
-  } return wordsUnique 
+     if (arrayU.includes(arrayU[i], i + 1)) {
+        
+      const indexRemove = arrayU.indexOf(arrayU[i], i + 1);
 
-    
-  }
+      arrayU.splice(indexRemove,1);
+      arrLength--;
+      i--;
+
+     } 
+
+    }return arrayU;
+} 
+
+uniquifyArray(wordsUnique)
+
                                                        
 
             
@@ -165,7 +175,18 @@ return wordsUnique */
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() { }
+function doesWordExist(wordsArray, searchWord) {
+  
+  if (!wordsArray.length){
+    return null;
+  } else if (wordsArray.includes(searchWord)) {
+    return true;
+
+  } else {
+    return false;
+  }
+
+ }
 
 
 
@@ -184,7 +205,23 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() { }
+function howManyTimes(arrOfWords, wordSearch) { 
+  
+  if (!arrOfWords.length) {
+    return 0;
+  } 
+
+  
+  let wordCount = 0;
+  for (let i = 0; i < arrOfWords.length; i++) {
+
+    if (arrOfWords[i] === wordSearch) {
+      wordCount++;  
+    }
+  }
+  return wordCount;
+}
+
 
 
 
