@@ -179,6 +179,7 @@ function doesWordExist(wordsArray, searchWord) {
   
   if (!wordsArray.length){
     return null;
+    
   } else if (wordsArray.includes(searchWord)) {
     return true;
 
@@ -210,7 +211,6 @@ function howManyTimes(arrOfWords, wordSearch) {
   if (!arrOfWords.length) {
     return 0;
   } 
-
   
   let wordCount = 0;
   for (let i = 0; i < arrOfWords.length; i++) {
